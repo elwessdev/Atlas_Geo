@@ -20,7 +20,7 @@ final List<Country> _sampleCountries = [
     population: 12,
     area: 163610,
     languages: 'Arabe',
-    flag: 'assets/flags/Tunisia_Big.png',
+    flag: 'https://www.countryflags.com/wp-content/uploads/tunisia-flag-png-large.png',
   ),
   const Country(
     name: 'Brésil',
@@ -177,11 +177,16 @@ class CountriesPage extends StatelessWidget {
         return ListTile(
           leading: CircleAvatar(
             radius: 20,
-            child: country.name == "Tunisie" ? Image.asset(
-              "assets/flags/Tunisia_Big.png",
-              width: 32,
-              height: 32,
-            ) : Image.network(
+            // child: country.name == "Tunisie" ? Image.asset(
+            //   "assets/flags/Tunisia_Big.png",
+            //   width: 32,
+            //   height: 32,
+            // ) : Image.network(
+            //   country.flag,
+            //   width: 32,
+            //   height: 32,
+            // ),
+            child: Image.network(
               country.flag,
               width: 32,
               height: 32,
