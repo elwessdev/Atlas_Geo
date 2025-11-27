@@ -4,13 +4,11 @@ Small Flutter sample application for a practical exam. It shows a list of countr
 
 ## Preview
 
-Welcome (landing image):
-
 ![Welcome globe](assets/image1.png)
+![Welcome globe](assets/image.png)
+![Welcome globe](assets/image2.png)
+![Welcome globe](assets/image3.png)
 
-Example flags (images under `assets/flags/`):
-
-![Brazil flag](assets/image.png) ![Canada flag](assets/image2.png) ![Germany flag](assets/image3.png)
 
 ## Main files
 
@@ -63,15 +61,6 @@ flutter run
 
 Small Flutter sample application for a practical exam. It shows a list of countries and includes navigation pages: a welcome screen, a countries list, a country detail page, and an About page.
 
-## Preview
-
-Welcome (landing image):
-
-![Welcome globe](assets/globe.png)
-
-Example flags (images under `assets/flags/`):
-
-![Brazil flag](assets/flags/brazil-flag-png-large.png) ![France flag](assets/flags/france-flag-png-large.png) ![Canada flag](assets/flags/canada-flag-png-large.png) ![Germany flag](assets/flags/germany-flag-png-large.png)
 
 ## Main files
 
@@ -80,7 +69,7 @@ Example flags (images under `assets/flags/`):
 - `lib/countries_page.dart` : countries list with AppBar "Liste des Pays", Drawer (Home / About / Quit) and a `ListView` of countries.
 - `lib/country_detail_page.dart` : country detail page (AppBar with back button + country name, large flag, capital, population, area, official language).
 - `lib/about_page.dart` : About page.
-- `lib/home_page.dart` : placeholder HomePage.
+- `lib/home_page.dart` : HomePage.
 - `lib/models/country.dart` : `Country` data model with attributes: `name`, `capital`, `population`, `area`, `languages`, `flag`.
 
 ## Assets structure
