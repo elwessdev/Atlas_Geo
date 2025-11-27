@@ -1,33 +1,35 @@
-# Atlas Géographique
+# Atlas Geographic
 
-Petite application Flutter d'examen pratique qui présente une liste de pays et des pages de navigation : écran d'accueil (welcome), liste des pays, détails d'un pays, et une page À propos.
+Small Flutter sample application for a practical exam. It shows a list of countries and includes navigation pages: a welcome screen, a countries list, a country detail page, and an About page.
 
-## Aperçu
+## Preview
 
-![Globe d'accueil](assets/image1.png)
-![Brazil flag](assets/image.png)
-![Canada flag](assets/image2.png)
-![Germany flag](assets/image3.png)
+Welcome (landing image):
 
+![Welcome globe](assets/image1.png)
 
-## Contenu principal
+Example flags (images under `assets/flags/`):
 
-- `lib/main.dart` : point d'entrée de l'application (démarre sur `WelcomePage`).
-- `lib/welcome_page.dart` : écran d'accueil avec AppBar "Atlas Géographique", image de bienvenue (`assets/globe.png`) et bouton "Explorer" qui ouvre la liste des pays.
-- `lib/countries_page.dart` : liste des pays avec AppBar "Liste des Pays", Drawer (Accueil / À propos / Quitter) et `ListView` de pays.
-- `lib/country_detail_page.dart` : page de détail d'un pays (AppBar avec bouton retour + nom du pays, grand drapeau, capitale, population, superficie, langue officielle).
-- `lib/about_page.dart` : page À propos (placeholder).
-- `lib/home_page.dart` : placeholder HomePage (si nécessaire).
-- `lib/models/country.dart` : modèle de données `Country` avec les attributs : `name`, `capital`, `population`, `area`, `languages`, `flag`.
+![Brazil flag](assets/image.png) ![Canada flag](assets/image2.png) ![Germany flag](assets/image3.png)
 
-## Structure des assets
+## Main files
 
-Le projet utilise des assets locaux :
+- `lib/main.dart` : application entry point (starts on `WelcomePage`).
+- `lib/welcome_page.dart` : welcome screen with AppBar "Atlas Géographique", landing image (`assets/globe.png`) and "Explore" button that opens the countries list.
+- `lib/countries_page.dart` : countries list with AppBar "Liste des Pays", Drawer (Home / About / Quit) and a `ListView` of countries.
+- `lib/country_detail_page.dart` : country detail page (AppBar with back button + country name, large flag, capital, population, area, official language).
+- `lib/about_page.dart` : About page
+- `lib/home_page.dart` : placeholder HomePage
+- `lib/models/country.dart` : `Country` data model with attributes: `name`, `capital`, `population`, `area`, `languages`, `flag`.
 
-- `assets/globe.png` — image d'accueil
-- `assets/flags/...` — images de drapeaux (optionnel : emojis sont aussi utilisés comme fallback)
+## Assets structure
 
-Assurez-vous d'avoir déclaré les assets dans `pubspec.yaml` sous la section `flutter:` correctement, par exemple :
+The project uses local assets:
+
+- `assets/globe.png` — welcome image
+- `assets/flags/...` — flag images (fallback to emojis is also supported)
+
+Make sure assets are declared in `pubspec.yaml` under the `flutter:` section, for example:
 
 ```yaml
 flutter:
@@ -36,52 +38,113 @@ flutter:
     - assets/flags/
 ```
 
-## Notes importantes sur les erreurs d'asset
+## Important notes about asset errors
 
-Si vous voyez des messages du type:
+Follow this checklist:
+
+1. Verify the file actually exists at that path in the repository (case-sensitive file names and extensions).
+2. Verify `pubspec.yaml`: the `assets:` section must be indented under `flutter:` (2 spaces).
+3. After editing `pubspec.yaml`, run `flutter pub get`.
+4. Fully restart the running app. Hot reload does not always pick up new assets.
+5. Avoid using spaces or special characters in filenames.
+
+## How to run
+
+From the project root (`atlas_geo_osama`) run:
+
+```bash
+flutter pub get
+flutter run
+```
+
+## Navigation and behavior
+
+# Atlas Geographic
+
+Small Flutter sample application for a practical exam. It shows a list of countries and includes navigation pages: a welcome screen, a countries list, a country detail page, and an About page.
+
+## Preview
+
+Welcome (landing image):
+
+![Welcome globe](assets/globe.png)
+
+Example flags (images under `assets/flags/`):
+
+![Brazil flag](assets/flags/brazil-flag-png-large.png) ![France flag](assets/flags/france-flag-png-large.png) ![Canada flag](assets/flags/canada-flag-png-large.png) ![Germany flag](assets/flags/germany-flag-png-large.png)
+
+## Main files
+
+- `lib/main.dart` : application entry point (starts on `WelcomePage`).
+- `lib/welcome_page.dart` : welcome screen with AppBar "Atlas Géographique", landing image (`assets/globe.png`) and "Explore" button that opens the countries list.
+- `lib/countries_page.dart` : countries list with AppBar "Liste des Pays", Drawer (Home / About / Quit) and a `ListView` of countries.
+- `lib/country_detail_page.dart` : country detail page (AppBar with back button + country name, large flag, capital, population, area, official language).
+- `lib/about_page.dart` : About page.
+- `lib/home_page.dart` : placeholder HomePage.
+- `lib/models/country.dart` : `Country` data model with attributes: `name`, `capital`, `population`, `area`, `languages`, `flag`.
+
+## Assets structure
+
+The project uses local assets:
+
+- `assets/globe.png` — welcome image
+- `assets/flags/...` — flag images (fallback to emojis is also supported)
+
+Make sure assets are declared in `pubspec.yaml` under the `flutter:` section, for example:
+
+```yaml
+flutter:
+  assets:
+    - assets/globe.png
+    - assets/flags/
+```
+
+## Important notes about asset errors
+
+If you see messages like:
 
 ```
 Unable to load asset: "assets/flags/brazil-flag-png-large.png"
 ```
 
-Suivez cette checklist :
+Follow this checklist:
 
-1. Vérifiez que le fichier existe exactement à ce chemin dans le dépôt (respect des majuscules/minuscules et extension).
-2. Vérifiez `pubspec.yaml` : la section `assets:` doit être indentée sous `flutter:` (2 espaces).
-3. Après modification de `pubspec.yaml`, exécutez `flutter pub get`.
-4. Redémarrez complètement l'application (full restart). Hot reload ne suffit pas toujours pour nouveaux assets.
-5. Évitez les noms de fichiers avec espaces ou caractères spéciaux.
+1. Verify the file actually exists at that path in the repository (case-sensitive file names and extensions).
+2. Verify `pubspec.yaml`: the `assets:` section must be indented under `flutter:` (2 spaces).
+3. After editing `pubspec.yaml`, run `flutter pub get`.
+4. Fully restart the running app. Hot reload does not always pick up new assets.
+5. Avoid using spaces or special characters in filenames.
 
-## Comment exécuter
+## How to run
 
-Ouvrez un terminal à la racine du projet (`atlas_geo_osama`) puis :
+From the project root (`atlas_geo_osama`) run:
 
 ```bash
 flutter pub get
 flutter run
 ```
 
-## Navigation et comportement
+## Navigation and behavior
 
-- Sur l'écran d'accueil (`WelcomePage`), le bouton "Explorer" ouvre `CountriesPage`.
-- Sur `CountriesPage`, le Drawer -->
-  - "Accueil" : retourne à `WelcomePage` (pushAndRemoveUntil).
-  - "À propos" : ouvre `AboutPage`.
-  - "Quitter" : affiche un dialogue et ferme l'app avec `SystemNavigator.pop()` si confirmé.
-- Cliquer un pays dans la liste ouvre `CountryDetailPage` qui affiche les informations détaillées du pays.
+- On the welcome screen (`WelcomePage`), the "Explore" button opens `CountriesPage`.
+- On `CountriesPage`, the Drawer -->
+  - "Home": returns to `WelcomePage` (pushAndRemoveUntil).
+  - "About": opens `AboutPage`.
+  - "Quit": shows a dialog and exits the app via `SystemNavigator.pop()` when confirmed.
+- Tapping a country in the list opens `CountryDetailPage` which displays detailed country information.
 
-## Modèle de données `Country`
+## `Country` data model
 
-Le modèle se trouve dans `lib/models/country.dart` et ressemble à :
+The model is in `lib/models/country.dart` and looks like:
 
 ```dart
 class Country {
   final String name;
   final String capital;
-  final int population; // en nombre d'habitants
-  final int area; // en km2
+  final int population; // number of inhabitants
+  final int area; // km2
   final String languages;
-  final String flag; // emoji ou chemin d'asset
+  final String flag; // emoji or asset path
 
   const Country({
     required this.name,
@@ -94,141 +157,17 @@ class Country {
 }
 ```
 
-## Dépannage rapide
+## Quick troubleshooting
 
-- "Unable to load asset" : voir section "Structure des assets". Vérifiez l'orthographe, l'indentation dans `pubspec.yaml` et exécutez `flutter pub get`.
-- Si vous utilisez des assets volumineux pour les drapeaux, vérifiez qu'ils sont bien ajoutés et que les noms ne contiennent pas d'espaces ou de caractères spéciaux.
-
----
-
-Si vous voulez, je peux :
-
-1. Vérifier et corriger `pubspec.yaml` pour lister correctement les assets.  
-2. Ajouter/optimiser un ensemble de drapeaux sous `assets/flags/` et mettre à jour `pubspec.yaml`.  
-3. Exécuter `flutter analyze` et corriger les warnings/erreurs détectées.
-
-Indiquez ce que vous préférez et je m'en occupe.
-# Atlas Géographique
-
-Petite application Flutter d'examen pratique qui présente une liste de pays et des pages de navigation : écran d'accueil (welcome), liste des pays, détails d'un pays, et une page À propos.
-
-
-
-## Contenu principal
-
-- `lib/main.dart` : point d'entrée de l'application (démarre sur `WelcomePage`).
-- `lib/welcome_page.dart` : écran d'accueil avec AppBar "Atlas Géographique", image de bienvenue (`assets/globe.png`) et bouton "Explorer" qui ouvre la liste des pays.
-- `lib/countries_page.dart` : liste des pays avec AppBar "Liste des Pays", Drawer (Accueil / À propos / Quitter) et `ListView` de pays.
-- `lib/country_detail_page.dart` : page de détail d'un pays (AppBar avec bouton retour + nom du pays, grand drapeau, capitale, population, superficie, langue officielle).
-- `lib/about_page.dart` : page À propos (placeholder).
-- `lib/home_page.dart` : placeholder HomePage (si nécessaire).
-- `lib/models/country.dart` : modèle de données `Country` avec les attributs : `name`, `capital`, `population`, `area`, `languages`, `flag`.
-
-## Structure des assets
-
-Le projet utilise des assets locaux :
-
-- `assets/globe.png` — image d'accueil
-- `assets/flags/...` — images de drapeaux (optionnel : emojis sont aussi utilisés comme fallback)
-
-Assurez-vous d'avoir déclaré les assets dans `pubspec.yaml` sous la section `flutter:` correctement, par exemple :
-
-```yaml
-flutter:
-  assets:
-    - assets/globe.png
-    - assets/flags/
-```
-
-Notes importantes sur les erreurs d'asset (ex : "Unable to load asset: \"assets/flags/brazil-flag-png-large.png\"")
-
-1. Vérifiez que les fichiers existent réellement au chemin indiqué dans le repo (respect exact des noms et des extensions).
-2. Vérifiez l'indentation et l'emplacement de la section `assets:` dans `pubspec.yaml`. Elle doit être indentée sous `flutter:` (2 espaces) — une erreur typique provoque l'asset non trouvé.
-3. Après modification de `pubspec.yaml`, exécutez :
-
-```bash
-flutter pub get
-```
-
-4. Si l'app tournait déjà, faites un "full restart" (hot restart peut ne pas suffire pour charger de nouveaux assets).
-
-5. Exemple d'entrée incorrecte vs correcte :
-
-Incorrect (fausse indentation) :
-
-```yaml
-flutter:
-assets:
-- assets/globe.png
-```
-
-Correct :
-
-```yaml
-flutter:
-  assets:
-    - assets/globe.png
-```
-
-## Comment exécuter
-
-Ouvrez un terminal à la racine du projet (`atlas_geo_osama`) puis :
-
-```bash
-flutter pub get
-flutter run
-```
-
-Sur un émulateur ou appareil connecté, `flutter run` lance l'application. Si vous voyez des erreurs de ressources d'image, suivez la checklist ci-dessus.
-
-## Navigation et comportement
-
-- Sur l'écran d'accueil (`WelcomePage`), le bouton "Explorer" ouvre `CountriesPage`.
-- Sur `CountriesPage`, le Drawer -->
-  - "Accueil" : retourne à `WelcomePage` (pushAndRemoveUntil).
-  - "À propos" : ouvre `AboutPage`.
-  - "Quitter" : affiche un dialogue et ferme l'app avec `SystemNavigator.pop()` si confirmé.
-- Cliquer un pays dans la liste ouvre `CountryDetailPage` qui affiche les informations détaillées du pays.
-
-## Modèle de données `Country`
-
-Le modèle se trouve dans `lib/models/country.dart` et ressemble à :
-
-```dart
-class Country {
-  final String name;
-  final String capital;
-  final int population; // en nombre d'habitants
-  final int area; // en km2
-  final String languages;
-  final String flag; // emoji ou chemin d'asset
-
-  const Country({
-    required this.name,
-    required this.capital,
-    required this.population,
-    required this.area,
-    required this.languages,
-    required this.flag,
-  });
-}
-```
-
-## Format d'affichage
-
-- Population : affichée en millions d'habitants (`XX millions d'habitants`).
-- Superficie : affichée en `XX km2`.
-
-## Dépannage rapide
-
-- "Unable to load asset" : voir section "Structure des assets". Vérifiez l'orthographe, l'indentation dans `pubspec.yaml` et exécutez `flutter pub get`.
-- Si vous utilisez des assets volumineux pour les drapeaux, vérifiez qu'ils sont bien ajoutés et que les noms ne contiennent pas d'espaces ou de caractères spéciaux.
+- "Unable to load asset": see the "Assets structure" section above. Check spelling, indentation in `pubspec.yaml` and run `flutter pub get`.
+- For large flag assets confirm they're committed and named without spaces or special chars.
 
 ---
 
-Si vous voulez, je peux :
+If you want, I can:
 
-1. Vérifier et appliquer automatiquement l'entrée `assets:` dans votre `pubspec.yaml` (je peux l'éditer ici).  
-2. Ajouter un petit ensemble de drapeaux dans `assets/flags/` et mettre à jour `pubspec.yaml`.  
+1. Check and fix `pubspec.yaml` so assets are listed correctly.  
+2. Add/optimize a set of flag images under `assets/flags/` and update `pubspec.yaml`.  
+3. Run `flutter analyze` and fix detected warnings/errors.
 
-Indiquez ce que vous préférez et je m'en occupe.
+Tell me which option you prefer and I will proceed.
